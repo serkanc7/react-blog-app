@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import Header from '@/components/Header/Header';
 import Home from '@/components/Home/Home';
 import Footer from '@/components/Footer/Footer';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
 
 function App() {
 
@@ -35,11 +38,17 @@ function App() {
   const deletePost = (id) => {
     const newPosts = posts.filter(post => post.id !== id);
     setPosts(newPosts);
+    toast.error('Post deleted!', {
+      position: toast.POSITION.BOTTOM_RIGHT
+    })
   }
 
   const updatePost = (id, updatedPost) => {
     const newPosts = posts.map(post => post.id === id ? updatedPost : post);
     setPosts(newPosts);
+    toast.info('Post edited!', {
+      position: toast.POSITION.BOTTOM_RIGHT
+    })
   }
 
 
