@@ -1,0 +1,33 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+button{
+    font-family: 'Rubik', sans-serif;
+}
+
+#root{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $main-bg-color;
+}
+
+.container{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    @include mq(mobile,max){
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

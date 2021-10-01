@@ -1,0 +1,62 @@
+.card{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $card-bg-color;
+    height: 100%;
+
+    &__img{
+        width: 100%;
+    }
+
+    &__category{
+        background: $card-category-bg-color;
+        color: $card-category-color;
+        padding: 10px;
+    }
+
+    &__title{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        color: $card-title-color;
+        margin: 5px 0;
+        word-break: break-all;
+    }
+
+    &__desc{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        color: $card-text-color;
+        word-break: break-all;
+    }
+    
+    &__buttons{
+        margin-top: auto;
+    }
+
+    &__button{
+        cursor: pointer;
+        border: none;
+        color: $card-btn-color;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: 500;
+
+        &--delete{
+            background-color: $card-btn-delete-bg-color;
+        }
+
+        &--edit{
+            background-color: $card-btn-edit-bg-color;
+            margin-left: 5px;
+        }
+    }
+
+}

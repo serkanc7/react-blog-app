@@ -1,0 +1,20 @@
+.stars{
+    &__button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 0;
+
+        &.on {
+            color:gold;
+        }
+        &.off {
+            color: #ccc;
+        }
+    }
+
+    &__star{
+        font-size: 20px;
+    }
+}
