@@ -12,12 +12,14 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("https://615194d84a5f22001701d2c7.mockapi.io/api/posts");
       const data = await response.json();
       setPosts(data);
+      setIsLoading(false);
     }
     fetchPosts();
   }, []);
@@ -55,7 +57,7 @@ function App() {
   return (
     <>
       <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <Home posts={filteredPosts} deletePost={deletePost} updatePost={updatePost} />
+      <Home posts={filteredPosts} deletePost={deletePost} updatePost={updatePost} isLoading={isLoading} />
       <Footer />
     </>
   );
