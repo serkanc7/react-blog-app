@@ -5,6 +5,8 @@
     align-items: flex-start;
     background-color: $card-bg-color;
     height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px #082032;
 
     &__img{
         width: 100%;
